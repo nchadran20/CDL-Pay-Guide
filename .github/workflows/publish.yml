@@ -26,40 +26,40 @@ jobs:
           mkdir -p blog
           mkdir -p scheduled
 
-          if [ -d "scheduled" ]; then
-            for file in scheduled/*.html; do
-              [ -f "$file" ] || continue
+          for file in scheduled/*.html; do
+            [ -f "$file" ] || continue
 
-              FILENAME=$(basename "$file")
-              echo "Found: scheduled/$FILENAME"
+            FILENAME=$(basename "$file")
+            echo "Found: scheduled/$FILENAME"
 
-              FILE_DATE=$(echo "$FILENAME" | cut -c1-10)
-              echo "File date: $FILE_DATE"
+            FILE_DATE=$(echo "$FILENAME" | cut -c1-10)
+            echo "File date: $FILE_DATE"
 
-              if ! echo "$FILE_DATE" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'; then
-                echo "Skipping $FILENAME — no valid date prefix"
-                continue
+            if ! echo "$FILE_DATE" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'; then
+              echo "Skipping $FILENAME — no valid date prefix"
+              continue
+            fi
+
+            EARLIEST=$(printf '%s\n' "$FILE_DATE" "$TODAY" | sort | head -n1)
+
+            if [ "$EARLIEST" = "$FILE_DATE" ]; then
+              SLUG=$(echo "$FILENAME" | cut -c12-)
+              echo "Publishing $SLUG"
+
+              cp "$file" "blog/$SLUG"
+              rm "$file"
+
+              PUBLISHED=$((PUBLISHED + 1))
+
+              SLUG_URL="https://cdlpayguide.com/blog/$SLUG"
+              if ! grep -q "$SLUG" sitemap.xml; then
+                sed -i "s|</urlset>|  <url>\n    <loc>$SLUG_URL</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n</urlset>|" sitemap.xml
+                echo "Added to sitemap: $SLUG_URL"
               fi
-
-              if [[ "$FILE_DATE" <= "$TODAY" ]]; then
-                SLUG=$(echo "$FILENAME" | cut -c12-)
-                echo "Publishing $SLUG"
-
-                cp "$file" "blog/$SLUG"
-                rm "$file"
-
-                PUBLISHED=$((PUBLISHED + 1))
-
-                SLUG_URL="https://cdlpayguide.com/blog/$SLUG"
-                if ! grep -q "$SLUG" sitemap.xml; then
-                  sed -i "s|</urlset>|  <url>\n    <loc>$SLUG_URL</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n</urlset>|" sitemap.xml
-                  echo "Added to sitemap: $SLUG_URL"
-                fi
-              else
-                echo "Not due yet: $FILENAME"
-              fi
-            done
-          fi
+            else
+              echo "Not due yet: $FILENAME"
+            fi
+          done
 
           echo "Articles published today: $PUBLISHED"
 
