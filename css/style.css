@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus Jakarta Sans+Condensed:wght@500;700;800;900&family=Plus Jakarta Sans:wght@400;500;600&display=swap');
+
+:root {
+  --asphalt: #1A1A1A;
+  --orange: #F05C2B;
+  --orange-light: #FF7A4D;
+  --orange-pale: #FFF0EB;
+  --yellow: #FFB800;
+  --cream: #FAFAF7;
+  --smoke: #F0EFEA;
+  --steel: #555555;
+  --text: #1A1A1A;
+  --muted: #888888;
+  --radius: 10px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6;font-size:16px}
+
+nav{background:var(--asphalt);position:sticky;top:0;z-index:100;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;box-shadow:0 2px 12px rgba(0,0,0,0.4)}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;text-decoration:none;letter-spacing:0.02em;display:flex;align-items:center;gap:8px}
+.nav-logo span{color:var(--orange)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--orange)}
+
+.article-hero{background:var(--asphalt);padding:3.5rem 1.5rem 3rem;position:relative;overflow:hidden}
+.article-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--yellow),var(--orange))}
+.article-hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
+.article-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:1.2rem}
+.article-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.08;color:#fff;letter-spacing:-0.01em}
+.article-hero h1 em{font-style:normal;color:var(--orange)}
+.article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem}
+.article-meta span{font-size:0.8rem;color:rgba(255,255,255,0.45)}
+.article-meta strong{color:rgba(255,255,255,0.7)}
+
+.article-body{max-width:780px;margin:0 auto;padding:3rem 1.5rem 4rem}
+.article-body h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.7rem;color:var(--asphalt);margin:2.5rem 0 0.8rem;letter-spacing:-0.01em}
+.article-body h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.15rem;color:var(--asphalt);margin:1.8rem 0 0.5rem}
+.article-body p{margin-bottom:1.2rem;color:var(--steel);line-height:1.75;font-size:1rem}
+.article-body p strong{color:var(--text)}
+.article-body ul,.article-body ol{margin:0 0 1.2rem 1.5rem;color:var(--steel);line-height:1.75}
+.article-body li{margin-bottom:0.4rem}
+
+.callout{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:1.2rem 1.5rem;margin:2rem 0}
+.callout strong{color:var(--asphalt);display:block;margin-bottom:0.3rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;letter-spacing:0.02em}
+.callout p{margin:0;font-size:0.93rem;color:var(--text)}
+
+.data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.875rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.data-table th{background:var(--asphalt);color:#fff;padding:10px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8rem;letter-spacing:0.08em;text-align:left}
+.data-table td{padding:10px 14px;border-bottom:1px solid #EEEEE9;color:var(--text)}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:#FAFAF5}
+.data-table td strong{color:var(--asphalt)}
+
+.cta-box{background:var(--asphalt);border-radius:14px;padding:2rem;margin:2.5rem 0;text-align:center}
+.cta-box h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;margin-bottom:0.5rem}
+.cta-box p{color:rgba(255,255,255,0.55);font-size:0.9rem;margin-bottom:1.2rem}
+.cta-btn{display:inline-block;background:var(--orange);color:#fff;padding:11px 2rem;border-radius:8px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;transition:background 0.2s}
+.cta-btn:hover{background:var(--orange-light)}
+
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+.blog-card{background:#fff;border:1.5px solid #E0DFDA;border-radius:12px;padding:1.4rem;text-decoration:none;display:block;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s}
+.blog-card:hover{border-color:var(--orange);box-shadow:var(--shadow);transform:translateY(-2px)}
+.blog-card .bc-tag{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--orange);margin-bottom:0.6rem;font-family:'Plus Jakarta Sans',sans-serif}
+.blog-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--asphalt);line-height:1.3;margin-bottom:0.5rem}
+.blog-card p{font-size:0.82rem;color:var(--steel);line-height:1.5}
+.blog-card .bc-meta{margin-top:0.8rem;font-size:0.72rem;color:var(--muted)}
+
+footer{background:var(--asphalt);color:rgba(255,255,255,0.5);padding:3rem 1.5rem;font-size:0.83rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+footer h4{color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1rem}
+footer p{line-height:1.7;margin-bottom:0.8rem}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--orange)}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:0.78rem}
+
+@media(max-width:768px){
+  nav .nav-links{display:none}
+  .footer-inner{grid-template-columns:1fr;gap:2rem}
+  .blog-grid{grid-template-columns:1fr}
+}

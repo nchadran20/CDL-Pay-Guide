@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDL Pay Guide — Truck Driver Salary, CDL Costs & Career Info 2026</title>
+<meta name="description" content="The most complete resource for aspiring truck drivers. Real salary data by state, CDL school costs, OTR vs regional vs local comparison, and everything you need to know before getting your CDL.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --asphalt: #1A1A1A;
+  --asphalt-mid: #2A2A2A;
+  --orange: #F05C2B;
+  --orange-light: #FF7A4D;
+  --orange-pale: #FFF0EB;
+  --yellow: #FFB800;
+  --cream: #FAFAF7;
+  --smoke: #F0EFEA;
+  --steel: #555555;
+  --text: #1A1A1A;
+  --muted: #888888;
+  --radius: 10px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6;font-size:16px}
+
+/* NAV */
+nav{background:var(--asphalt);position:sticky;top:0;z-index:100;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;box-shadow:0 2px 12px rgba(0,0,0,0.4)}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;text-decoration:none;letter-spacing:0.02em;display:flex;align-items:center;gap:8px}
+.nav-logo span{color:var(--orange)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--orange)}
+
+/* HERO */
+.hero{background:var(--asphalt);color:#fff;padding:4rem 1.5rem 3.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.015) 0px,rgba(255,255,255,0.015) 1px,transparent 1px,transparent 80px);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--yellow),var(--orange))}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:1}
+.hero-tag{display:inline-block;background:var(--orange);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:1.2rem}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05;margin-bottom:1rem;letter-spacing:-0.01em}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.65;margin-bottom:2rem}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
+.hero-stat{background:rgba(255,255,255,0.03);padding:1.1rem;text-align:center}
+.hero-stat strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.6rem;color:var(--orange);line-height:1}
+.hero-stat small{color:rgba(255,255,255,0.45);font-size:0.75rem}
+
+/* QUICK CALC CARD */
+.quick-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.8rem}
+.quick-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--orange);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.2rem}
+.quick-fields{display:flex;flex-direction:column;gap:10px;margin-bottom:1rem}
+.quick-fields select{padding:10px 14px;border:1.5px solid rgba(255,255,255,0.12);border-radius:8px;background:rgba(255,255,255,0.07);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;appearance:none;cursor:pointer}
+.quick-fields select option{background:var(--asphalt)}
+.quick-btn{width:100%;padding:12px;background:var(--orange);color:#fff;border:none;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.95rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
+.quick-btn:hover{background:var(--orange-light)}
+.quick-result{background:rgba(240,92,43,0.12);border:1px solid rgba(240,92,43,0.25);border-radius:10px;padding:1rem 1.2rem;margin-top:1rem;display:none}
+.quick-result.show{display:block}
+.quick-result .qr-pay{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:2rem;color:var(--orange);display:block;line-height:1}
+.quick-result .qr-label{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:3px;display:block}
+.quick-result .qr-range{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:6px}
+
+/* SECTION */
+section{padding:4rem 1.5rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:0.5rem}
+.section-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.1;margin-bottom:0.8rem;color:var(--asphalt);letter-spacing:-0.01em}
+.section-sub{color:var(--steel);max-width:560px;font-size:0.95rem;line-height:1.65;margin-bottom:2.5rem}
+
+/* SALARY TABLE SECTION */
+#salary{background:#fff}
+.salary-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;align-items:start}
+.salary-form{display:flex;flex-direction:column;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:0.82rem;font-weight:600;color:var(--steel);text-transform:uppercase;letter-spacing:0.06em}
+.form-group select{padding:11px 14px;border:1.5px solid #E0DFDA;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;color:var(--text);background:var(--cream);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23555' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer;transition:border-color 0.2s}
+.form-group select:focus{outline:none;border-color:var(--orange)}
+.calc-btn{background:var(--asphalt);color:#fff;border:none;padding:13px 2rem;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
+.calc-btn:hover{background:var(--orange)}
+
+.salary-result{background:var(--asphalt);border-radius:14px;padding:2rem;color:#fff;position:sticky;top:76px}
+.sr-label{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.2rem}
+.sr-pay{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:3rem;color:var(--orange);line-height:1;margin-bottom:0.2rem}
+.sr-sub{font-size:0.82rem;color:rgba(255,255,255,0.4);margin-bottom:1.5rem}
+.sr-row{display:flex;justify-content:space-between;align-items:center;padding:0.55rem 0;border-bottom:1px solid rgba(255,255,255,0.07);font-size:0.85rem}
+.sr-row:last-child{border-bottom:none}
+.sr-row .sl{color:rgba(255,255,255,0.5)}
+.sr-row .sv{color:#fff;font-weight:600}
+.sr-row .sv.good{color:#6ee7a0}
+.sr-annual{margin-top:1.2rem;background:rgba(240,92,43,0.15);border:1px solid rgba(240,92,43,0.25);border-radius:8px;padding:0.9rem 1.1rem;display:flex;justify-content:space-between;align-items:center}
+.sr-annual .al{font-size:0.78rem;color:rgba(255,255,255,0.45)}
+.sr-annual .av{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.5rem;color:var(--orange)}
+
+/* STATE TABLE */
+#state-table{background:var(--smoke)}
+.table-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:0.875rem}
+thead tr{background:var(--asphalt);color:#fff}
+th{padding:11px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-align:left;white-space:nowrap}
+td{padding:10px 16px;border-bottom:1px solid #EEEEE9;color:var(--text);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#FAFAF5}
+.state-name{font-weight:600;color:var(--asphalt)}
+.pay-amount{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;color:var(--asphalt)}
+.rank-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.72rem;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:0.06em}
+.rank-top{background:#fff0eb;color:#d44000}
+.rank-mid{background:#f5f5f0;color:#555}
+.rank-low{background:#f0f5f0;color:#2a6b2a}
+.bar-wrap{width:100px;height:5px;background:#EEEEE9;border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--yellow));border-radius:3px}
+
+/* DRIVING TYPES */
+#types{background:#fff}
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.type-card{border:2px solid #E0DFDA;border-radius:14px;padding:1.8rem;position:relative;overflow:hidden;transition:border-color 0.2s,box-shadow 0.2s}
+.type-card:hover{border-color:var(--orange);box-shadow:var(--shadow-lg)}
+.type-card.featured{border-color:var(--orange);background:var(--orange-pale)}
+.type-label{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.8rem;color:var(--orange)}
+.type-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.5rem;color:var(--asphalt);margin-bottom:0.3rem}
+.type-pay{font-size:0.88rem;color:var(--steel);margin-bottom:1.2rem}
+.type-pay strong{color:var(--orange);font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:800}
+.type-meta{display:flex;flex-direction:column;gap:8px;margin-bottom:1.2rem}
+.meta-row{display:flex;align-items:center;gap:8px;font-size:0.82rem}
+.meta-icon{font-size:1rem;width:20px}
+.meta-label{color:var(--steel)}
+.meta-val{color:var(--asphalt);font-weight:600;margin-left:auto}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:1rem;border-top:1px solid #E0DFDA;padding-top:1rem}
+.pro-list,.con-list{display:flex;flex-direction:column;gap:5px}
+.pro-list li,.con-list li{font-size:0.78rem;list-style:none;padding-left:1rem;position:relative;color:var(--steel)}
+.pro-list li::before{content:'✓';position:absolute;left:0;color:#2a6b2a;font-weight:700}
+.con-list li::before{content:'✗';position:absolute;left:0;color:#c0392b;font-weight:700}
+
+/* CDL COST */
+#cdl-cost{background:var(--smoke)}
+.cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.cost-cards{display:flex;flex-direction:column;gap:1rem}
+.cost-card{background:#fff;border:1.5px solid #E0DFDA;border-radius:10px;padding:1.4rem;display:flex;gap:1.2rem;align-items:flex-start;transition:border-color 0.2s}
+.cost-card:hover{border-color:var(--orange)}
+.cost-icon{width:42px;height:42px;border-radius:8px;background:var(--asphalt);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.cost-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--asphalt);margin-bottom:3px}
+.cost-card .cost-range{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.1rem;color:var(--orange);margin-bottom:4px}
+.cost-card p{font-size:0.82rem;color:var(--steel);line-height:1.5}
+
+.total-box{background:var(--asphalt);border-radius:14px;padding:2rem;color:#fff;position:sticky;top:76px}
+.total-box h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.2rem;color:#fff;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.06em}
+.total-row{display:flex;justify-content:space-between;align-items:center;padding:0.55rem 0;border-bottom:1px solid rgba(255,255,255,0.07);font-size:0.85rem}
+.total-row:last-child{border-bottom:none}
+.total-row .tl{color:rgba(255,255,255,0.5)}
+.total-row .tv{color:#fff;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem}
+.grand-total{margin-top:1.2rem;background:rgba(240,92,43,0.15);border:1px solid rgba(240,92,43,0.3);border-radius:8px;padding:1rem 1.2rem}
+.grand-total .gt-label{font-size:0.75rem;color:rgba(255,255,255,0.45);letter-spacing:0.08em;text-transform:uppercase}
+.grand-total .gt-amount{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:2rem;color:var(--orange)}
+.free-path{margin-top:1rem;background:rgba(110,231,160,0.1);border:1px solid rgba(110,231,160,0.2);border-radius:8px;padding:1rem 1.2rem;font-size:0.82rem;color:rgba(255,255,255,0.65);line-height:1.55}
+.free-path strong{color:#6ee7a0}
+
+/* TOP COMPANIES */
+#companies{background:#fff}
+.companies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+.company-card{border:1.5px solid #E0DFDA;border-radius:12px;padding:1.4rem;background:var(--cream);transition:border-color 0.2s,box-shadow 0.2s}
+.company-card:hover{border-color:var(--orange);box-shadow:var(--shadow)}
+.company-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.8rem}
+.company-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.1rem;color:var(--asphalt)}
+.company-type{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:#f0f0ea;color:#555;padding:2px 8px;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif}
+.company-pay{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;color:var(--orange);margin-bottom:0.4rem}
+.company-detail{font-size:0.82rem;color:var(--steel);line-height:1.5}
+.company-badge{display:inline-block;margin-top:0.8rem;padding:3px 10px;border-radius:4px;font-size:0.72rem;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:0.06em}
+.badge-green{background:#e8f5ee;color:#1a6b3c}
+.badge-orange{background:#fff0eb;color:#c03000}
+
+/* BLOG SECTION */
+#blog{background:var(--smoke)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+.blog-card{background:#fff;border:1.5px solid #E0DFDA;border-radius:12px;padding:1.5rem;text-decoration:none;display:block;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s}
+.blog-card:hover{border-color:var(--orange);box-shadow:var(--shadow);transform:translateY(-2px)}
+.blog-card .bc-tag{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--orange);margin-bottom:0.6rem;font-family:'Plus Jakarta Sans',sans-serif}
+.blog-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;color:var(--asphalt);line-height:1.3;margin-bottom:0.5rem}
+.blog-card p{font-size:0.82rem;color:var(--steel);line-height:1.5}
+.blog-card .bc-meta{margin-top:0.8rem;font-size:0.72rem;color:var(--muted)}
+
+/* FOOTER */
+footer{background:var(--asphalt);color:rgba(255,255,255,0.5);padding:3rem 1.5rem;font-size:0.83rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+footer h4{color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1rem}
+footer p{line-height:1.7;margin-bottom:0.8rem}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--orange)}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:0.78rem}
+.footer-stripe{height:4px;background:linear-gradient(90deg,var(--orange),var(--yellow),var(--orange));margin-bottom:0}
+
+/* CTA BOX */
+.cta-box{background:var(--asphalt);border-radius:14px;padding:2rem;margin:2.5rem 0;text-align:center}
+.cta-box h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;margin-bottom:0.5rem}
+.cta-box p{color:rgba(255,255,255,0.55);font-size:0.9rem;margin-bottom:1.2rem}
+.cta-btn{display:inline-block;background:var(--orange);color:#fff;padding:11px 2rem;border-radius:8px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;transition:background 0.2s}
+.cta-btn:hover{background:var(--orange-light)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-inner,.salary-grid,.cost-grid,.types-grid,.footer-inner{grid-template-columns:1fr}
+  nav .nav-links{display:none}
+  .hero{padding:2.5rem 1.2rem 2rem}
+  .hero h1{font-size:2rem}
+  .hero-stats{grid-template-columns:1fr}
+  .hero-stat{display:flex;justify-content:space-between;align-items:center}
+  .hero-stat strong{font-size:1.4rem;display:inline}
+  .types-grid{grid-template-columns:1fr}
+  .companies-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">🚛 CDL <span>Pay Guide</span></a>
+  <ul class="nav-links">
+    <li><a href="#salary">Salary Calculator</a></li>
+    <li><a href="#state-table">Pay by State</a></li>
+    <li><a href="#types">OTR vs Regional</a></li>
+    <li><a href="#cdl-cost">CDL Costs</a></li>
+    <li><a href="#companies">Top Companies</a></li>
+    <li><a href="blog.html">Articles</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">2026 Updated Data</div>
+      <h1>Everything You Need to Know Before Getting Your <em>CDL</em></h1>
+      <p>Real salary data by state, CDL school costs, honest lifestyle breakdowns, and the top companies hiring right now. No recruiters. No sales pitch. Just answers.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>$73K</strong><small>Avg CDL salary 2026</small></div>
+        <div class="hero-stat"><strong>3.5M</strong><small>Truck drivers in US</small></div>
+        <div class="hero-stat"><strong>500K+</strong><small>Jobs available now</small></div>
+      </div>
+    </div>
+    <div class="quick-card">
+      <h3>⚡ Quick Pay Lookup</h3>
+      <div class="quick-fields">
+        <select id="q-state">
+          <option value="">Select your state...</option>
+          <option value="NJ">New Jersey</option>
+          <option value="WA">Washington</option>
+          <option value="AK">Alaska</option>
+          <option value="NY">New York</option>
+          <option value="MA">Massachusetts</option>
+          <option value="CA">California</option>
+          <option value="CT">Connecticut</option>
+          <option value="MD">Maryland</option>
+          <option value="CO">Colorado</option>
+          <option value="IL">Illinois</option>
+          <option value="MN">Minnesota</option>
+          <option value="OR">Oregon</option>
+          <option value="NV">Nevada</option>
+          <option value="WI">Wisconsin</option>
+          <option value="MI">Michigan</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="ND">North Dakota</option>
+          <option value="VA">Virginia</option>
+          <option value="DE">Delaware</option>
+          <option value="HI">Hawaii</option>
+          <option value="NH">New Hampshire</option>
+          <option value="RI">Rhode Island</option>
+          <option value="VT">Vermont</option>
+          <option value="WY">Wyoming</option>
+          <option value="IA">Iowa</option>
+          <option value="TX">Texas</option>
+          <option value="GA">Georgia</option>
+          <option value="NC">North Carolina</option>
+          <option value="MO">Missouri</option>
+          <option value="IN">Indiana</option>
+          <option value="KS">Kansas</option>
+          <option value="NE">Nebraska</option>
+          <option value="SC">South Carolina</option>
+          <option value="OH">Ohio</option>
+          <option value="KY">Kentucky</option>
+          <option value="OK">Oklahoma</option>
+          <option value="AZ">Arizona</option>
+          <option value="ID">Idaho</option>
+          <option value="MT">Montana</option>
+          <option value="SD">South Dakota</option>
+          <option value="NM">New Mexico</option>
+          <option value="UT">Utah</option>
+          <option value="AL">Alabama</option>
+          <option value="AR">Arkansas</option>
+          <option value="TN">Tennessee</option>
+          <option value="WV">West Virginia</option>
+          <option value="FL">Florida</option>
+          <option value="ME">Maine</option>
+          <option value="MS">Mississippi</option>
+          <option value="LA">Louisiana</option>
+        </select>
+        <select id="q-type">
+          <option value="">Select driving type...</option>
+          <option value="otr">OTR (Over the Road)</option>
+          <option value="regional">Regional</option>
+          <option value="local">Local</option>
+        </select>
+        <select id="q-exp">
+          <option value="">Select experience level...</option>
+          <option value="new">New Driver (0–1 year)</option>
+          <option value="mid">Mid-Level (2–5 years)</option>
+          <option value="exp">Experienced (5+ years)</option>
+        </select>
+      </div>
+      <button class="quick-btn" onclick="quickCalc()">Calculate My Pay →</button>
+      <div class="quick-result" id="q-result">
+        <span class="qr-pay" id="q-pay"></span>
+        <span class="qr-label">estimated annual salary · 2026 data</span>
+        <div class="qr-range" id="q-range"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SALARY CALCULATOR -->
+<section id="salary">
+  <div class="section-inner">
+    <div class="section-tag">Salary Calculator</div>
+    <h2 class="section-title">What Will YOU Make as a Truck Driver?</h2>
+    <p class="section-sub">Enter your details to get a personalized salary estimate based on real 2026 market data from BLS, ZipRecruiter, and Indeed.</p>
+
+    <div class="salary-grid">
+      <div class="salary-form">
+        <div class="form-group">
+          <label>State</label>
+          <select id="s-state">
+            <option value="">Select state...</option>
+            <option value="NJ">New Jersey</option>
+            <option value="WA">Washington</option>
+            <option value="AK">Alaska</option>
+            <option value="NY">New York</option>
+            <option value="MA">Massachusetts</option>
+            <option value="CA">California</option>
+            <option value="CT">Connecticut</option>
+            <option value="MD">Maryland</option>
+            <option value="CO">Colorado</option>
+            <option value="IL">Illinois</option>
+            <option value="MN">Minnesota</option>
+            <option value="OR">Oregon</option>
+            <option value="NV">Nevada</option>
+            <option value="WI">Wisconsin</option>
+            <option value="MI">Michigan</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="ND">North Dakota</option>
+            <option value="VA">Virginia</option>
+            <option value="DE">Delaware</option>
+            <option value="HI">Hawaii</option>
+            <option value="NH">New Hampshire</option>
+            <option value="RI">Rhode Island</option>
+            <option value="VT">Vermont</option>
+            <option value="WY">Wyoming</option>
+            <option value="IA">Iowa</option>
+            <option value="TX">Texas</option>
+            <option value="GA">Georgia</option>
+            <option value="NC">North Carolina</option>
+            <option value="MO">Missouri</option>
+            <option value="IN">Indiana</option>
+            <option value="KS">Kansas</option>
+            <option value="NE">Nebraska</option>
+            <option value="SC">South Carolina</option>
+            <option value="OH">Ohio</option>
+            <option value="KY">Kentucky</option>
+            <option value="OK">Oklahoma</option>
+            <option value="AZ">Arizona</option>
+            <option value="ID">Idaho</option>
+            <option value="MT">Montana</option>
+            <option value="SD">South Dakota</option>
+            <option value="NM">New Mexico</option>
+            <option value="UT">Utah</option>
+            <option value="AL">Alabama</option>
+            <option value="AR">Arkansas</option>
+            <option value="TN">Tennessee</option>
+            <option value="WV">West Virginia</option>
+            <option value="FL">Florida</option>
+            <option value="ME">Maine</option>
+            <option value="MS">Mississippi</option>
+            <option value="LA">Louisiana</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Driving Type</label>
+          <select id="s-type">
+            <option value="">Select type...</option>
+            <option value="otr">OTR (Long Haul)</option>
+            <option value="regional">Regional</option>
+            <option value="local">Local / City</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>CDL Class</label>
+          <select id="s-cdl">
+            <option value="a">Class A (Tractor-Trailer)</option>
+            <option value="b">Class B (Straight Truck / Bus)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Experience Level</label>
+          <select id="s-exp">
+            <option value="new">New Driver (0–1 year)</option>
+            <option value="mid">Mid-Level (2–5 years)</option>
+            <option value="exp">Experienced (5+ years)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Endorsements</label>
+          <select id="s-end">
+            <option value="none">None</option>
+            <option value="hazmat">Hazmat</option>
+            <option value="tanker">Tanker</option>
+            <option value="both">Hazmat + Tanker</option>
+          </select>
+        </div>
+        <button class="calc-btn" onclick="calcSalary()">Calculate My Salary →</button>
+      </div>
+
+      <div class="salary-result">
+        <div class="sr-label">Estimated Annual Salary</div>
+        <div class="sr-pay" id="sr-pay">$0</div>
+        <div class="sr-sub" id="sr-sub">Fill out the form to calculate</div>
+        <div class="sr-row"><span class="sl">Per month</span><span class="sv" id="sr-month">—</span></div>
+        <div class="sr-row"><span class="sl">Per week</span><span class="sv" id="sr-week">—</span></div>
+        <div class="sr-row"><span class="sl">Per hour (est.)</span><span class="sv" id="sr-hour">—</span></div>
+        <div class="sr-row"><span class="sl">Pay type</span><span class="sv" id="sr-paytype">—</span></div>
+        <div class="sr-row"><span class="sl">Home time</span><span class="sv" id="sr-home">—</span></div>
+        <div class="sr-row"><span class="sl">Job outlook</span><span class="sv good">Strong — Driver shortage</span></div>
+        <div class="sr-annual">
+          <span class="al">Salary range</span>
+          <span class="av" id="sr-range">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATE TABLE -->
+<section id="state-table">
+  <div class="section-inner">
+    <div class="section-tag">Pay by State</div>
+    <h2 class="section-title">CDL Truck Driver Salary by State (2026)</h2>
+    <p class="section-sub">Average annual salaries for CDL Class A heavy truck drivers based on BLS and ZipRecruiter data. Sorted from highest to lowest pay.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>State</th>
+            <th>Avg Annual Salary</th>
+            <th>Hourly Rate</th>
+            <th>vs National Avg</th>
+            <th>Pay Scale</th>
+          </tr>
+        </thead>
+        <tbody id="state-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DRIVING TYPES -->
+<section id="types">
+  <div class="section-inner">
+    <div class="section-tag">Choose Your Path</div>
+    <h2 class="section-title">OTR vs Regional vs Local — Which Is Right for You?</h2>
+    <p class="section-sub">The most important decision you'll make as a new CDL driver. Each type has completely different pay, lifestyle, and home time. Here's the honest breakdown.</p>
+
+    <div class="types-grid">
+      <div class="type-card">
+        <div class="type-label">🛣️ Long Haul</div>
+        <div class="type-name">OTR Driving</div>
+        <div class="type-pay">Avg <strong>$75,000–$95,000/yr</strong></div>
+        <div class="type-meta">
+          <div class="meta-row"><span class="meta-icon">🏠</span><span class="meta-label">Home time</span><span class="meta-val">Every 2–4 weeks</span></div>
+          <div class="meta-row"><span class="meta-icon">🗺️</span><span class="meta-label">Miles/week</span><span class="meta-val">2,500–3,000</span></div>
+          <div class="meta-row"><span class="meta-icon">💰</span><span class="meta-label">Pay method</span><span class="meta-val">Per mile ($.45–$.65)</span></div>
+          <div class="meta-row"><span class="meta-icon">🎯</span><span class="meta-label">Best for</span><span class="meta-val">Single, adventurous</span></div>
+        </div>
+        <div class="pros-cons">
+          <ul class="pro-list">
+            <li>Highest pay</li>
+            <li>See the country</li>
+            <li>Most freedom</li>
+            <li>Easiest to get hired</li>
+          </ul>
+          <ul class="con-list">
+            <li>Away from family</li>
+            <li>Lonely lifestyle</li>
+            <li>Health challenges</li>
+            <li>No routine</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card featured">
+        <div class="type-label">⭐ Most Popular</div>
+        <div class="type-name">Regional Driving</div>
+        <div class="type-pay">Avg <strong>$63,000–$80,000/yr</strong></div>
+        <div class="type-meta">
+          <div class="meta-row"><span class="meta-icon">🏠</span><span class="meta-label">Home time</span><span class="meta-val">Weekends + some nights</span></div>
+          <div class="meta-row"><span class="meta-icon">🗺️</span><span class="meta-label">Range</span><span class="meta-val">4–5 state region</span></div>
+          <div class="meta-row"><span class="meta-icon">💰</span><span class="meta-label">Pay method</span><span class="meta-val">Per mile or hourly</span></div>
+          <div class="meta-row"><span class="meta-icon">🎯</span><span class="meta-label">Best for</span><span class="meta-val">Families, balance seekers</span></div>
+        </div>
+        <div class="pros-cons">
+          <ul class="pro-list">
+            <li>Good pay + home time</li>
+            <li>Know your routes</li>
+            <li>Regular schedule</li>
+            <li>Best of both worlds</li>
+          </ul>
+          <ul class="con-list">
+            <li>Less pay than OTR</li>
+            <li>Tighter deadlines</li>
+            <li>Some nights away</li>
+            <li>Repetitive routes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card">
+        <div class="type-label">🏙️ City Driving</div>
+        <div class="type-name">Local Driving</div>
+        <div class="type-pay">Avg <strong>$55,000–$70,000/yr</strong></div>
+        <div class="type-meta">
+          <div class="meta-row"><span class="meta-icon">🏠</span><span class="meta-label">Home time</span><span class="meta-val">Home every night</span></div>
+          <div class="meta-row"><span class="meta-icon">🗺️</span><span class="meta-label">Range</span><span class="meta-val">Within 250 miles</span></div>
+          <div class="meta-row"><span class="meta-icon">💰</span><span class="meta-label">Pay method</span><span class="meta-val">Hourly typically</span></div>
+          <div class="meta-row"><span class="meta-icon">🎯</span><span class="meta-label">Best for</span><span class="meta-val">Family-oriented drivers</span></div>
+        </div>
+        <div class="pros-cons">
+          <ul class="pro-list">
+            <li>Home every night</li>
+            <li>Consistent schedule</li>
+            <li>Weekends off often</li>
+            <li>Know your area</li>
+          </ul>
+          <ul class="con-list">
+            <li>Lowest of 3 types</li>
+            <li>City traffic stress</li>
+            <li>Physical loading work</li>
+            <li>Need experience first</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CDL COST -->
+<section id="cdl-cost">
+  <div class="section-inner">
+    <div class="section-tag">Getting Your CDL</div>
+    <h2 class="section-title">How Much Does CDL School Cost in 2026?</h2>
+    <p class="section-sub">The full cost breakdown — from school tuition to your license fees. Plus the most important thing most people don't know: companies will often pay for your CDL.</p>
+
+    <div class="cost-grid">
+      <div class="cost-cards">
+        <div class="cost-card">
+          <div class="cost-icon">🏫</div>
+          <div>
+            <h3>CDL School Tuition</h3>
+            <div class="cost-range">$3,000 – $10,000</div>
+            <p>Private schools cost the most ($7K–$10K). Community colleges are cheaper ($3K–$5K) but have waitlists. Duration is typically 3–8 weeks.</p>
+          </div>
+        </div>
+        <div class="cost-card">
+          <div class="cost-icon">📋</div>
+          <div>
+            <h3>Permit & License Fees</h3>
+            <div class="cost-range">$100 – $200</div>
+            <p>Commercial Learner's Permit ($10–$50), CDL license ($30–$100), and written/skills test fees vary by state.</p>
+          </div>
+        </div>
+        <div class="cost-card">
+          <div class="cost-icon">🩺</div>
+          <div>
+            <h3>DOT Physical + Drug Test</h3>
+            <div class="cost-range">$100 – $200</div>
+            <p>Required before you can get your CDL. DOT physical ($50–$150), drug screen ($30–$60). Must be renewed every 2 years.</p>
+          </div>
+        </div>
+        <div class="cost-card">
+          <div class="cost-icon">⚠️</div>
+          <div>
+            <h3>Endorsement Fees (Optional)</h3>
+            <div class="cost-range">$20 – $100 each</div>
+            <p>Hazmat, Tanker, Doubles/Triples each require additional tests. Hazmat also requires a TSA background check. But they boost your pay significantly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="total-box">
+        <h3>💰 Total Cost Breakdown</h3>
+        <div class="total-row"><span class="tl">CDL School (avg)</span><span class="tv">$6,500</span></div>
+        <div class="total-row"><span class="tl">Permit & License</span><span class="tv">$150</span></div>
+        <div class="total-row"><span class="tl">DOT Physical + Drug Test</span><span class="tv">$150</span></div>
+        <div class="total-row"><span class="tl">Study materials</span><span class="tv">$50</span></div>
+        <div class="total-row"><span class="tl">Optional endorsements</span><span class="tv">$100</span></div>
+        <div class="grand-total">
+          <div class="gt-label">Typical total cost</div>
+          <div class="gt-amount">$5,000 – $11,000</div>
+        </div>
+
+        <div class="free-path">
+          <strong>🎯 The Free Path:</strong> Many major carriers — Werner, Swift, Schneider, CR England — will pay your CDL school costs in exchange for a 1–2 year commitment to drive for them. You pay $0 upfront. This is how most new drivers enter the industry. <a href="blog/company-paid-cdl-training.html" style="color:var(--orange)">Read more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP COMPANIES -->
+<section id="companies">
+  <div class="section-inner">
+    <div class="section-tag">Who's Hiring</div>
+    <h2 class="section-title">Top Trucking Companies for New CDL Drivers</h2>
+    <p class="section-sub">The biggest carriers hiring right now, with starting pay, training programs, and home time policies.</p>
+
+    <div class="companies-grid">
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">Werner Enterprises</div>
+          <div class="company-type">OTR / Regional</div>
+        </div>
+        <div class="company-pay">$0.54–$0.62/mile</div>
+        <div class="company-detail">One of the largest US carriers. Offers company-paid CDL training. Strong benefits including health insurance and 401k. Good option for new drivers.</div>
+        <span class="company-badge badge-green">✓ Pays for CDL Training</span>
+      </div>
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">Schneider National</div>
+          <div class="company-type">OTR / Regional / Local</div>
+        </div>
+        <div class="company-pay">$55,000–$75,000/yr</div>
+        <div class="company-detail">Offers all three driving types. Excellent training program. Intermodal (container) option great for drivers wanting more home time. Publicly traded company.</div>
+        <span class="company-badge badge-green">✓ Pays for CDL Training</span>
+      </div>
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">Swift Transportation</div>
+          <div class="company-type">OTR</div>
+        </div>
+        <div class="company-pay">$0.50–$0.60/mile</div>
+        <div class="company-detail">Nation's largest truckload carrier. Guaranteed freight — drivers rarely sit. Best for maximizing miles. Offers Swift Academy for new drivers.</div>
+        <span class="company-badge badge-green">✓ Pays for CDL Training</span>
+      </div>
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">Amazon Freight</div>
+          <div class="company-type">Regional / Dedicated</div>
+        </div>
+        <div class="company-pay">$65,000–$85,000/yr</div>
+        <div class="company-detail">Dedicated routes, consistent freight, and better home time than traditional OTR. Competitive pay. Requires 1 year experience. Worth pursuing after your first year.</div>
+        <span class="company-badge badge-orange">⚡ Requires 1 Year Experience</span>
+      </div>
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">UPS Freight</div>
+          <div class="company-type">Regional / Local</div>
+        </div>
+        <div class="company-pay">$70,000–$95,000/yr</div>
+        <div class="company-detail">Some of the best pay and benefits in the industry. Union job (Teamsters). Excellent health insurance and pension. Competitive — usually requires experience to get in.</div>
+        <span class="company-badge badge-orange">⚡ Usually Requires Experience</span>
+      </div>
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-name">CR England</div>
+          <div class="company-type">OTR / Regional</div>
+        </div>
+        <div class="company-pay">$0.48–$0.58/mile</div>
+        <div class="company-detail">Refrigerated freight specialist. Offers CR England Truck Driving School — one of the most established CDL training programs in the country. Good entry point.</div>
+        <span class="company-badge badge-green">✓ Pays for CDL Training</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section id="blog">
+  <div class="section-inner">
+    <div class="section-tag">Learn More</div>
+    <h2 class="section-title">CDL Guides & Articles</h2>
+    <p class="section-sub">In-depth guides on every aspect of starting a trucking career.</p>
+
+    <div class="blog-grid">
+      <a href="blog/how-to-get-cdl-step-by-step.html" class="blog-card">
+        <div class="bc-tag">Getting Started</div>
+        <h3>How to Get Your CDL: Complete Step-by-Step Guide for 2026</h3>
+        <p>Every step from the DMV permit test to your first job, with exact costs and timelines.</p>
+        <div class="bc-meta">Jan 2026 · 10 min read</div>
+      </a>
+      <a href="blog/company-paid-cdl-training.html" class="blog-card">
+        <div class="bc-tag">Free Training</div>
+        <h3>10 Trucking Companies That Will Pay for Your CDL in 2026</h3>
+        <p>Get your CDL for $0 upfront. The full list of carriers offering paid training programs.</p>
+        <div class="bc-meta">Jan 2026 · 8 min read</div>
+      </a>
+      <a href="blog/otr-vs-regional-vs-local.html" class="blog-card">
+        <div class="bc-tag">Career Choice</div>
+        <h3>OTR vs Regional vs Local Trucking: The Honest Truth</h3>
+        <p>Real drivers share what they wish they knew before choosing their driving type.</p>
+        <div class="bc-meta">Jan 2026 · 9 min read</div>
+      </a>
+      <a href="blog/owner-operator-vs-company-driver.html" class="blog-card">
+        <div class="bc-tag">Income</div>
+        <h3>Owner Operator vs Company Driver: Which Makes More Money?</h3>
+        <p>The math most people get wrong. Real numbers on what owner operators actually take home.</p>
+        <div class="bc-meta">Jan 2026 · 11 min read</div>
+      </a>
+      <a href="blog/highest-paying-cdl-jobs.html" class="blog-card">
+        <div class="bc-tag">Top Pay</div>
+        <h3>The 8 Highest Paying CDL Jobs in 2026</h3>
+        <p>Hazmat, tanker, oversized loads — the specializations that push your pay above $90K.</p>
+        <div class="bc-meta">Jan 2026 · 8 min read</div>
+      </a>
+      <a href="blog/truck-driver-lifestyle-reality.html" class="blog-card">
+        <div class="bc-tag">Real Talk</div>
+        <h3>The Real Truck Driver Lifestyle — What No One Tells You</h3>
+        <p>Health, relationships, money, and mental health. The honest side of a trucking career.</p>
+        <div class="bc-meta">Jan 2026 · 10 min read</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="footer-stripe"></div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>CDL Pay Guide</h4>
+      <p>The most comprehensive free resource for people considering a career in truck driving. Real salary data, honest advice, no recruiter pressure.</p>
+      <p>All salary data sourced from BLS, ZipRecruiter, and Indeed — updated for 2026.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="#salary">Salary Calculator</a></li>
+        <li><a href="#state-table">Pay by State</a></li>
+        <li><a href="#types">OTR vs Regional</a></li>
+        <li><a href="#cdl-cost">CDL Cost Breakdown</a></li>
+        <li><a href="#companies">Top Companies</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Articles</h4>
+      <ul>
+        <li><a href="blog/how-to-get-cdl-step-by-step.html">How to Get Your CDL</a></li>
+        <li><a href="blog/company-paid-cdl-training.html">Free CDL Training</a></li>
+        <li><a href="blog/highest-paying-cdl-jobs.html">Highest Paying Jobs</a></li>
+        <li><a href="blog.html">All Articles</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CDL Pay Guide. For informational purposes only.</span>
+    <span>Data from BLS, ZipRecruiter, Indeed · Updated 2026</span>
+  </div>
+</footer>
+
+<script>
+// STATE SALARY DATA (2026, BLS + ZipRecruiter)
+const stateData = {
+  NJ:{name:'New Jersey',avg:67630,low:52000,high:85000},
+  WA:{name:'Washington',avg:67060,low:51000,high:84000},
+  AK:{name:'Alaska',avg:66890,low:50000,high:83000},
+  NY:{name:'New York',avg:65800,low:49000,high:82000},
+  MA:{name:'Massachusetts',avg:64500,low:48000,high:81000},
+  CA:{name:'California',avg:63200,low:47000,high:80000},
+  CT:{name:'Connecticut',avg:62800,low:47000,high:79000},
+  CO:{name:'Colorado',avg:61800,low:46000,high:78000},
+  IL:{name:'Illinois',avg:61500,low:46000,high:77000},
+  MN:{name:'Minnesota',avg:61200,low:45000,high:77000},
+  OR:{name:'Oregon',avg:60900,low:45000,high:76000},
+  MD:{name:'Maryland',avg:60500,low:45000,high:76000},
+  HI:{name:'Hawaii',avg:60200,low:44000,high:75000},
+  DE:{name:'Delaware',avg:59800,low:44000,high:75000},
+  RI:{name:'Rhode Island',avg:59500,low:44000,high:74000},
+  NH:{name:'New Hampshire',avg:59200,low:43000,high:74000},
+  NV:{name:'Nevada',avg:58800,low:43000,high:74000},
+  VA:{name:'Virginia',avg:58500,low:43000,high:73000},
+  MI:{name:'Michigan',avg:58200,low:43000,high:73000},
+  WI:{name:'Wisconsin',avg:57900,low:42000,high:72000},
+  PA:{name:'Pennsylvania',avg:57600,low:42000,high:72000},
+  TX:{name:'Texas',avg:58400,low:43000,high:74000},
+  ND:{name:'North Dakota',avg:57300,low:42000,high:72000},
+  VT:{name:'Vermont',avg:57000,low:42000,high:71000},
+  WY:{name:'Wyoming',avg:56900,low:41000,high:71000},
+  GA:{name:'Georgia',avg:57200,low:42000,high:72000},
+  NC:{name:'North Carolina',avg:56800,low:41000,high:71000},
+  OH:{name:'Ohio',avg:56100,low:41000,high:70000},
+  MT:{name:'Montana',avg:55800,low:40000,high:70000},
+  IN:{name:'Indiana',avg:55500,low:40000,high:69000},
+  MO:{name:'Missouri',avg:55200,low:40000,high:69000},
+  IA:{name:'Iowa',avg:54900,low:40000,high:68000},
+  TN:{name:'Tennessee',avg:54200,low:39000,high:68000},
+  FL:{name:'Florida',avg:54662,low:38000,high:70000},
+  KY:{name:'Kentucky',avg:54000,low:39000,high:67000},
+  NE:{name:'Nebraska',avg:53800,low:39000,high:67000},
+  KS:{name:'Kansas',avg:53500,low:39000,high:67000},
+  SD:{name:'South Dakota',avg:53200,low:38000,high:66000},
+  ID:{name:'Idaho',avg:52900,low:38000,high:66000},
+  AZ:{name:'Arizona',avg:52600,low:38000,high:66000},
+  NM:{name:'New Mexico',avg:52300,low:37000,high:65000},
+  SC:{name:'South Carolina',avg:52000,low:37000,high:65000},
+  OK:{name:'Oklahoma',avg:51700,low:37000,high:65000},
+  WV:{name:'West Virginia',avg:51400,low:37000,high:64000},
+  UT:{name:'Utah',avg:53800,low:38000,high:67000},
+  AL:{name:'Alabama',avg:51100,low:36000,high:64000},
+  ME:{name:'Maine',avg:50800,low:36000,high:63000},
+  AR:{name:'Arkansas',avg:50500,low:36000,high:63000},
+  MS:{name:'Mississippi',avg:50200,low:36000,high:62000},
+  LA:{name:'Louisiana',avg:49800,low:36000,high:63000},
+};
+
+const natAvg = 73147;
+
+// Type/exp modifiers
+const typeModifier = {otr:1.08, regional:0.95, local:0.85};
+const expModifier = {new:0.82, mid:1.0, exp:1.18};
+const endModifier = {none:1.0, hazmat:1.12, tanker:1.10, both:1.22};
+const cdlModifier = {a:1.0, b:0.88};
+
+const homeTime = {otr:'Every 2–4 weeks',regional:'Home weekends',local:'Home nightly'};
+const payType = {otr:'Per mile ($.45–$.65/mi)',regional:'Per mile or hourly',local:'Hourly typically'};
+
+// QUICK CALC
+const quickData = {
+  NJ:{otr:{new:62000,mid:75000,exp:88000},regional:{new:54000,mid:65000,exp:76000},local:{new:47000,mid:57000,exp:67000}},
+  WA:{otr:{new:61000,mid:74000,exp:86000},regional:{new:53000,mid:64000,exp:75000},local:{new:46000,mid:56000,exp:66000}},
+  AK:{otr:{new:60000,mid:73000,exp:85000},regional:{new:52000,mid:63000,exp:74000},local:{new:45000,mid:55000,exp:65000}},
+  NY:{otr:{new:60000,mid:72000,exp:84000},regional:{new:52000,mid:62000,exp:73000},local:{new:45000,mid:54000,exp:64000}},
+  MA:{otr:{new:58000,mid:70000,exp:82000},regional:{new:51000,mid:61000,exp:71000},local:{new:44000,mid:53000,exp:62000}},
+  CA:{otr:{new:57000,mid:69000,exp:80000},regional:{new:50000,mid:60000,exp:70000},local:{new:43000,mid:52000,exp:61000}},
+  CT:{otr:{new:57000,mid:69000,exp:80000},regional:{new:50000,mid:60000,exp:70000},local:{new:43000,mid:52000,exp:61000}},
+  MD:{otr:{new:57000,mid:68000,exp:79000},regional:{new:49000,mid:59000,exp:69000},local:{new:43000,mid:51000,exp:60000}},
+  CO:{otr:{new:56000,mid:68000,exp:79000},regional:{new:49000,mid:58000,exp:68000},local:{new:42000,mid:51000,exp:59000}},
+  IL:{otr:{new:56000,mid:68000,exp:79000},regional:{new:49000,mid:59000,exp:69000},local:{new:42000,mid:51000,exp:60000}},
+  MN:{otr:{new:55000,mid:67000,exp:78000},regional:{new:48000,mid:58000,exp:68000},local:{new:42000,mid:50000,exp:59000}},
+  OR:{otr:{new:55000,mid:67000,exp:78000},regional:{new:48000,mid:57000,exp:67000},local:{new:41000,mid:50000,exp:58000}},
+  NV:{otr:{new:55000,mid:66000,exp:77000},regional:{new:47000,mid:57000,exp:67000},local:{new:41000,mid:49000,exp:58000}},
+  WI:{otr:{new:54000,mid:65000,exp:76000},regional:{new:47000,mid:56000,exp:66000},local:{new:40000,mid:49000,exp:57000}},
+  MI:{otr:{new:54000,mid:65000,exp:76000},regional:{new:47000,mid:56000,exp:65000},local:{new:40000,mid:48000,exp:57000}},
+  PA:{otr:{new:53000,mid:64000,exp:75000},regional:{new:46000,mid:56000,exp:65000},local:{new:40000,mid:48000,exp:56000}},
+  ND:{otr:{new:53000,mid:64000,exp:75000},regional:{new:46000,mid:55000,exp:65000},local:{new:40000,mid:48000,exp:56000}},
+  VA:{otr:{new:53000,mid:64000,exp:74000},regional:{new:46000,mid:55000,exp:64000},local:{new:40000,mid:48000,exp:56000}},
+  DE:{otr:{new:53000,mid:63000,exp:74000},regional:{new:46000,mid:55000,exp:64000},local:{new:39000,mid:47000,exp:55000}},
+  HI:{otr:{new:52000,mid:63000,exp:74000},regional:{new:45000,mid:54000,exp:63000},local:{new:39000,mid:47000,exp:55000}},
+  NH:{otr:{new:52000,mid:63000,exp:73000},regional:{new:45000,mid:54000,exp:63000},local:{new:39000,mid:47000,exp:55000}},
+  RI:{otr:{new:52000,mid:62000,exp:73000},regional:{new:45000,mid:54000,exp:62000},local:{new:39000,mid:46000,exp:54000}},
+  VT:{otr:{new:52000,mid:62000,exp:72000},regional:{new:45000,mid:53000,exp:62000},local:{new:39000,mid:46000,exp:54000}},
+  WY:{otr:{new:51000,mid:62000,exp:72000},regional:{new:44000,mid:53000,exp:62000},local:{new:38000,mid:46000,exp:54000}},
+  IA:{otr:{new:51000,mid:62000,exp:72000},regional:{new:44000,mid:53000,exp:62000},local:{new:38000,mid:46000,exp:53000}},
+  TX:{otr:{new:53000,mid:64000,exp:75000},regional:{new:46000,mid:56000,exp:65000},local:{new:40000,mid:48000,exp:57000}},
+  GA:{otr:{new:52000,mid:63000,exp:73000},regional:{new:45000,mid:54000,exp:63000},local:{new:39000,mid:47000,exp:55000}},
+  NC:{otr:{new:51000,mid:62000,exp:72000},regional:{new:44000,mid:53000,exp:62000},local:{new:38000,mid:46000,exp:54000}},
+  MO:{otr:{new:51000,mid:61000,exp:71000},regional:{new:44000,mid:53000,exp:61000},local:{new:38000,mid:45000,exp:53000}},
+  IN:{otr:{new:51000,mid:61000,exp:71000},regional:{new:44000,mid:52000,exp:61000},local:{new:38000,mid:45000,exp:53000}},
+  KS:{otr:{new:50000,mid:61000,exp:71000},regional:{new:44000,mid:52000,exp:61000},local:{new:38000,mid:45000,exp:53000}},
+  NE:{otr:{new:50000,mid:60000,exp:70000},regional:{new:43000,mid:52000,exp:60000},local:{new:37000,mid:44000,exp:52000}},
+  SC:{otr:{new:50000,mid:60000,exp:70000},regional:{new:43000,mid:52000,exp:60000},local:{new:37000,mid:44000,exp:52000}},
+  OH:{otr:{new:51000,mid:62000,exp:73000},regional:{new:45000,mid:54000,exp:63000},local:{new:39000,mid:47000,exp:55000}},
+  KY:{otr:{new:50000,mid:60000,exp:70000},regional:{new:43000,mid:51000,exp:60000},local:{new:37000,mid:44000,exp:52000}},
+  OK:{otr:{new:49000,mid:60000,exp:70000},regional:{new:43000,mid:51000,exp:60000},local:{new:37000,mid:44000,exp:52000}},
+  AZ:{otr:{new:49000,mid:59000,exp:69000},regional:{new:43000,mid:51000,exp:59000},local:{new:37000,mid:44000,exp:51000}},
+  ID:{otr:{new:49000,mid:59000,exp:69000},regional:{new:42000,mid:51000,exp:59000},local:{new:36000,mid:43000,exp:51000}},
+  MT:{otr:{new:49000,mid:59000,exp:69000},regional:{new:42000,mid:50000,exp:58000},local:{new:36000,mid:43000,exp:51000}},
+  SD:{otr:{new:48000,mid:58000,exp:68000},regional:{new:42000,mid:50000,exp:58000},local:{new:36000,mid:43000,exp:50000}},
+  NM:{otr:{new:48000,mid:58000,exp:68000},regional:{new:42000,mid:50000,exp:58000},local:{new:36000,mid:43000,exp:50000}},
+  UT:{otr:{new:48000,mid:58000,exp:68000},regional:{new:42000,mid:50000,exp:58000},local:{new:36000,mid:43000,exp:50000}},
+  UT:{otr:{new:48000,mid:58000,exp:68000},regional:{new:42000,mid:50000,exp:58000},local:{new:36000,mid:43000,exp:50000}},
+  AL:{otr:{new:48000,mid:58000,exp:67000},regional:{new:41000,mid:49000,exp:57000},local:{new:35000,mid:42000,exp:49000}},
+  AR:{otr:{new:47000,mid:57000,exp:67000},regional:{new:41000,mid:49000,exp:57000},local:{new:35000,mid:42000,exp:49000}},
+  TN:{otr:{new:49000,mid:60000,exp:70000},regional:{new:43000,mid:52000,exp:61000},local:{new:37000,mid:45000,exp:53000}},
+  WV:{otr:{new:47000,mid:57000,exp:67000},regional:{new:41000,mid:49000,exp:57000},local:{new:35000,mid:42000,exp:49000}},
+  FL:{otr:{new:50000,mid:61000,exp:71000},regional:{new:44000,mid:53000,exp:62000},local:{new:38000,mid:46000,exp:54000}},
+  ME:{otr:{new:49000,mid:60000,exp:70000},regional:{new:43000,mid:51000,exp:60000},local:{new:37000,mid:44000,exp:52000}},
+  MS:{otr:{new:46000,mid:56000,exp:65000},regional:{new:40000,mid:48000,exp:56000},local:{new:34000,mid:41000,exp:48000}},
+  LA:{otr:{new:45000,mid:55000,exp:65000},regional:{new:39000,mid:48000,exp:56000},local:{new:34000,mid:41000,exp:49000}},
+};
+
+function fmt(n){return '$'+Math.round(n).toLocaleString()}
+
+function quickCalc(){
+  const state=document.getElementById('q-state').value;
+  const type=document.getElementById('q-type').value;
+  const exp=document.getElementById('q-exp').value;
+  if(!state||!type||!exp){alert('Please select all three options.');return;}
+  const pay=quickData[state]?.[type]?.[exp]||55000;
+  const low=Math.round(pay*0.85);
+  const high=Math.round(pay*1.15);
+  document.getElementById('q-pay').textContent=fmt(pay)+'/yr';
+  document.getElementById('q-range').textContent='Typical range: '+fmt(low)+' – '+fmt(high);
+  document.getElementById('q-result').classList.add('show');
+}
+
+function calcSalary(){
+  const state=document.getElementById('s-state').value;
+  const type=document.getElementById('s-type').value;
+  const cdl=document.getElementById('s-cdl').value;
+  const exp=document.getElementById('s-exp').value;
+  const end=document.getElementById('s-end').value;
+  if(!state||!type){alert('Please select at least state and driving type.');return;}
+  const base=stateData[state]?.avg||60000;
+  const annual=Math.round(base*typeModifier[type]*expModifier[exp]*endModifier[end]*cdlModifier[cdl]);
+  const monthly=Math.round(annual/12);
+  const weekly=Math.round(annual/52);
+  const hourly=Math.round(annual/2080);
+  const low=Math.round(annual*0.82);
+  const high=Math.round(annual*1.22);
+  document.getElementById('sr-pay').textContent=fmt(annual);
+  document.getElementById('sr-sub').textContent=stateData[state].name+' · '+exp+' driver · 2026 estimate';
+  document.getElementById('sr-month').textContent=fmt(monthly)+'/mo';
+  document.getElementById('sr-week').textContent=fmt(weekly)+'/wk';
+  document.getElementById('sr-hour').textContent='~$'+hourly+'/hr';
+  document.getElementById('sr-paytype').textContent=payType[type];
+  document.getElementById('sr-home').textContent=homeTime[type];
+  document.getElementById('sr-range').textContent=fmt(low)+' – '+fmt(high);
+}
+
+// STATE TABLE
+function renderTable(){
+  const sorted=Object.entries(stateData).sort((a,b)=>b[1].avg-a[1].avg);
+  const maxAvg=sorted[0][1].avg;
+  let html='';
+  sorted.forEach(([code,d],i)=>{
+    const diff=((d.avg-natAvg)/natAvg*100).toFixed(1);
+    const diffStr=diff>0?'+'+diff+'%':diff+'%';
+    const diffClass=diff>0?'rank-top':diff<-5?'rank-low':'rank-mid';
+    const barPct=Math.round((d.avg/maxAvg)*100);
+    const rank=i===0?'🥇 #1':i===1?'🥈 #2':i===2?'🥉 #3':'#'+(i+1);
+    html+=`<tr>
+      <td><span class="rank-badge ${diffClass}">${rank}</span></td>
+      <td class="state-name">${d.name}</td>
+      <td class="pay-amount">${fmt(d.avg)}</td>
+      <td>$${Math.round(d.avg/2080)}/hr</td>
+      <td><span class="rank-badge ${diffClass}">${diffStr}</span></td>
+      <td><div class="bar-wrap"><div class="bar-fill" style="width:${barPct}%"></div></div></td>
+    </tr>`;
+  });
+  document.getElementById('state-table-body').innerHTML=html;
+}
+renderTable();
+</script>
+</body>
+</html>
