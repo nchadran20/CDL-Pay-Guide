@@ -23,6 +23,9 @@ jobs:
 
           PUBLISHED=0
 
+          mkdir -p blog
+          mkdir -p scheduled
+
           if [ -d "scheduled" ]; then
             for file in scheduled/*.html; do
               [ -f "$file" ] || continue
@@ -56,9 +59,6 @@ jobs:
                 echo "Not due yet: $FILENAME"
               fi
             done
-          else
-            echo "No scheduled folder found"
-            mkdir -p scheduled
           fi
 
           echo "Articles published today: $PUBLISHED"
