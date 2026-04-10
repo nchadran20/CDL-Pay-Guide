@@ -97,6 +97,25 @@ section{padding:4rem 1.5rem}
 
 /* STATE TABLE */
 #state-table{background:var(--smoke)}
+/* Compact state grid */
+.state-grid-compact{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:1.5rem}
+.sgc-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 10px;text-align:center;cursor:default;transition:border-color 0.2s,transform 0.15s;position:relative}
+.sgc-card:hover{border-color:var(--orange);transform:translateY(-2px);z-index:2;box-shadow:0 6px 20px rgba(0,0,0,0.12)}
+.sgc-abbr{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1rem;color:var(--asphalt);margin-bottom:2px}
+.sgc-name{font-size:0.62rem;color:var(--muted);margin-bottom:6px;line-height:1.2}
+.sgc-pay{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:0.9rem;color:var(--asphalt)}
+.sgc-hr{font-size:0.68rem;color:var(--steel);margin-top:1px}
+.sgc-badge{display:inline-block;font-size:0.6rem;font-weight:700;padding:1px 6px;border-radius:20px;margin-top:4px}
+.sgc-top{background:#e8f5e9;color:#2e7d32}
+.sgc-mid{background:#fff8e1;color:#f57f17}
+.sgc-low{background:#fdecea;color:#c62828}
+/* Tooltip on hover */
+.sgc-tooltip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--asphalt);color:#fff;border-radius:8px;padding:10px 12px;width:180px;font-size:0.75rem;line-height:1.5;z-index:100;text-align:left;box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+.sgc-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--asphalt)}
+.sgc-card:hover .sgc-tooltip{display:block}
+.sgc-tooltip strong{color:var(--orange)}
+@media(max-width:900px){.state-grid-compact{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:640px){.state-grid-compact{grid-template-columns:repeat(3,1fr)}.sgc-tooltip{display:none!important}}
 .table-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:0.875rem}
 thead tr{background:var(--asphalt);color:#fff}
@@ -447,21 +466,7 @@ footer a:hover{color:var(--orange)}
     <h2 class="section-title">CDL Truck Driver Salary by State (2026)</h2>
     <p class="section-sub">Average annual salaries for CDL Class A heavy truck drivers based on BLS and ZipRecruiter data. Sorted from highest to lowest pay.</p>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>State</th>
-            <th>Avg Annual Salary</th>
-            <th>Hourly Rate</th>
-            <th>vs National Avg</th>
-            <th>Pay Scale</th>
-          </tr>
-        </thead>
-        <tbody id="state-table-body"></tbody>
-      </table>
-    </div>
+    <div class="state-grid-compact" id="state-grid-compact"></div>
   </div>
 </section>
 
@@ -927,29 +932,34 @@ function calcSalary(){
   document.getElementById('sr-range').textContent=fmt(low)+' – '+fmt(high);
 }
 
-// STATE TABLE
-function renderTable(){
+// STATE COMPACT GRID
+function renderStateGrid(){
   const sorted=Object.entries(stateData).sort((a,b)=>b[1].avg-a[1].avg);
-  const maxAvg=sorted[0][1].avg;
   let html='';
   sorted.forEach(([code,d],i)=>{
     const diff=((d.avg-natAvg)/natAvg*100).toFixed(1);
     const diffStr=diff>0?'+'+diff+'%':diff+'%';
-    const diffClass=diff>0?'rank-top':diff<-5?'rank-low':'rank-mid';
-    const barPct=Math.round((d.avg/maxAvg)*100);
+    const badgeClass=diff>2?'sgc-top':diff<-5?'sgc-low':'sgc-mid';
+    const hr=Math.round(d.avg/2080);
     const rank=i===0?'🥇 #1':i===1?'🥈 #2':i===2?'🥉 #3':'#'+(i+1);
-    html+=`<tr>
-      <td><span class="rank-badge ${diffClass}">${rank}</span></td>
-      <td class="state-name">${d.name}</td>
-      <td class="pay-amount">${fmt(d.avg)}</td>
-      <td>$${Math.round(d.avg/2080)}/hr</td>
-      <td><span class="rank-badge ${diffClass}">${diffStr}</span></td>
-      <td><div class="bar-wrap"><div class="bar-fill" style="width:${barPct}%"></div></div></td>
-    </tr>`;
+    html+=`<div class="sgc-card">
+      <div class="sgc-abbr">${code}</div>
+      <div class="sgc-name">${d.name}</div>
+      <div class="sgc-pay">${fmt(d.avg)}</div>
+      <div class="sgc-hr">$${hr}/hr</div>
+      <div class="sgc-badge ${badgeClass}">${diffStr} vs avg</div>
+      <div class="sgc-tooltip">
+        <strong>${d.name}</strong><br>
+        Rank: ${rank}<br>
+        Avg: ${fmt(d.avg)}/yr · $${hr}/hr<br>
+        Range: ${fmt(d.low)} – ${fmt(d.high)}<br>
+        vs National: ${diffStr}
+      </div>
+    </div>`;
   });
-  document.getElementById('state-table-body').innerHTML=html;
+  document.getElementById('state-grid-compact').innerHTML=html;
 }
-renderTable();
+renderStateGrid();
 </script>
-<script src="../js/editorial.js"></script></body>
+<script src="js/editorial.js"></script></body>
 </html>
